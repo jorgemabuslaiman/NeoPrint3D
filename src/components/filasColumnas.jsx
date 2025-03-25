@@ -4,27 +4,28 @@ import Col from 'react-bootstrap/Col';
 import TarjetasMacetas from './cardsComponent'; // Importa las Cards
 import React from 'react';
 
-function FilasyColumnas() {
+function FilasyColumnas({ onSelect }) {
   // Array con la información de cada tarjeta
   const macetas = [
-    { imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Roja", descripcion: "Ideal para interiores." },
-    { imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Verde", descripcion: "Resistente a la intemperie." },
-    { imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Azul", descripcion: "Perfecta para cactus." },
-    { imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Amarilla", descripcion: "Dale vida a tu jardín." },
-    { imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Rosa", descripcion: "Toque elegante y sutil." },
-    { imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Celeste", descripcion: "Refrescante y relajante." }
+    { id: 1, imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Roja", descripcion: "Ideal para interiores." },
+    { id:  2, imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Verde", descripcion: "Resistente a la intemperie." },
+    { id: 3, imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Azul", descripcion: "Perfecta para cactus." },
+    { id: 4, imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Amarilla", descripcion: "Dale vida a tu jardín." },
+    { id: 5, imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Rosa", descripcion: "Toque elegante y sutil." },
+    { id: 6, imagen: "https://www.achaheart.org/media/1836/asd-illustration.jpg", titulo: "Maceta Celeste", descripcion: "Refrescante y relajante." }
   ];
 
   return (
     <Container className="mt-4">
       {/* Mapeamos las tarjetas en filas de 3 columnas */}
       <Row>
-        {macetas.map((maceta, index) => (
-          <Col key={index} md={4} className="mb-4">
+        {macetas.map((maceta) => (
+          <Col key={maceta.id} md={4} className="mb-4">
             <TarjetasMacetas 
               imagen={maceta.imagen} 
               titulo={maceta.titulo} 
-              descripcion={maceta.descripcion} 
+              descripcion={maceta.descripcion}
+              onSelect={ () => onSelect(maceta)} 
             />
           </Col>
         ))}
