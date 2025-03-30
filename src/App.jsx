@@ -7,7 +7,7 @@ import Admin from './pages/Admin';
 import Login from './pages/Login';
 import ProductDetail from './pages/ProductDetail';
 
-const App = () => {
+function App () {
   const [isLogged, setIsLogged] = useState(false);
   const [products, setProducts] = useState([
       {
