@@ -8,9 +8,9 @@ const Login = ({ setIsLogged }) => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (email === "asd@asd.com" && password === "1234") {
+    if (email === "asd@asd.com" && password === "123") {
       setIsLogged(true);
-      navigate('/admin'); // Redirige a la página de administración
+      navigate('/admin'); // Redirige a Admin.jsx
     } else {
       alert("Usuario y/o contraseña incorrectos");
     }

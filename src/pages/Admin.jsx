@@ -15,9 +15,11 @@ const Admin = ({ isLogged, products, setProducts }) => {
     stock: ""
   });
 
-  // Redirigir si no está autenticado
+  // Si el usuario no está autenticado, redirigirlo al login
   useEffect(() => {
-    if (!isLogged) navigate('/login');
+    if (!isLogged) {
+      navigate('/login');
+    }
   }, [isLogged, navigate]);
 
   const handleChange = (e) => {
@@ -25,28 +27,19 @@ const Admin = ({ isLogged, products, setProducts }) => {
   };
 
   const handleAddProduct = () => {
-    // Verificar que todos los campos estén completos
     if (!newProduct.id || !newProduct.name || !newProduct.price || !newProduct.category || !newProduct.image || !newProduct.description || !newProduct.stock) {
       alert("Todos los campos son obligatorios.");
       return;
     }
 
-    // Verificar si el ID ya existe
     if (products.some(product => product.id === newProduct.id)) {
       alert("El ID del producto ya existe. Ingrese un ID único.");
       return;
     }
 
-    // Agregar el producto a la lista
     setProducts([...products, newProduct]);
 
-    // Resetear el formulario
     setNewProduct({ id: "", name: "", price: "", category: "", image: "", description: "", stock: "" });
-  };
-
-  const handleEditProduct = (product) => {
-    // Cargar el producto seleccionado para edición en el formulario
-    setNewProduct({ ...product });
   };
 
   return (
@@ -95,7 +88,6 @@ const Admin = ({ isLogged, products, setProducts }) => {
       <ProductTable 
         products={products} 
         setProducts={setProducts} 
-        handleEditProduct={handleEditProduct} // Pasar la función de edición
       />
     </Container>
   );
