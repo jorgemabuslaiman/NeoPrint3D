@@ -1,5 +1,6 @@
-import React from 'react';
-import { Container, Card, Row, Col } from 'react-bootstrap';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const Home = ({ products }) => {
   return (
@@ -7,15 +8,17 @@ const Home = ({ products }) => {
       <h2>Catálogo de Productos</h2>
       <Row>
         {products.length > 0 ? (
-          products.map(product => (
-            <Col key={product.id} md={4} className="mb-3">
+          products.map((product) => (
+            <Col key={product.id} md={4} className="mb-4">
               <Card>
                 <Card.Img variant="top" src={product.image} alt={product.name} />
                 <Card.Body>
                   <Card.Title>{product.name}</Card.Title>
-                  <Card.Text>{product.description}</Card.Text>
-                  <Card.Text><strong>Precio: ${product.price}</strong></Card.Text>
-                  <Card.Text><small>Stock: {product.stock}</small></Card.Text>
+                  <Card.Text>Precio: ${product.price}</Card.Text>
+                  <Card.Text>Categoría: {product.category}</Card.Text>
+                  <Link to={`/product/${product.id}`}>
+                    <Button variant="info">Ver Detalles</Button>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
