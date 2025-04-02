@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -6,6 +8,7 @@ import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import ProductDetail from "./pages/ProductDetail";
+import { AboutPage } from './pages/AboutPage';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -29,6 +32,7 @@ const App = () => {
         <Route path="/admin" element={<Admin isLogged={isLogged} products={products} setProducts={setProducts} />} />
         <Route path="/login" element={<Login setIsLogged={setIsLogged} />} />
         <Route path="/product/:id" element={<ProductDetail products={products} />} />
+        <Route path="/aboutus" element={<AboutPage/>} />
       </Routes>
       <Footer />
     </Router>

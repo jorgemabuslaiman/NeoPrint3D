@@ -13,6 +13,7 @@ function NavigationBar () {
 </Navbar.Brand>
         <Nav className="ms-auto">
           <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+          <Nav.Link as={Link} to="/aboutus">Sobre Nosotros</Nav.Link>
           <Button variant="outline-light" as={Link} to="/login">Login</Button>
         </Nav>
       </Container>
