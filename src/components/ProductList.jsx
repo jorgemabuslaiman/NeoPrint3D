@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductList = ({ products }) => {
+function ProductList ({ products }) {
   return (
     <ul>
       {products.map(product => (

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ProductTable from '../components/ProductTable';
 import { Container, Button, Form } from 'react-bootstrap';
 
-const Admin = ({ isLogged, products, setProducts }) => {
+function Admin ({ isLogged, products, setProducts }) {
   const navigate = useNavigate();
   const [newProduct, setNewProduct] = useState({
     id: "",
