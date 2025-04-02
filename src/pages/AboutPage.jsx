@@ -3,9 +3,9 @@ import React from 'react'
 import { Col, Row } from "react-bootstrap";
 import logoRolling from "../assets/logo2.png";
 import jorgeImage from '../assets/jorge.jpg';
-import EzequielImage from '../assets/Ezequiel.png';
-import EricImage from '../assets/Eric.jpg';
-import SergioImage from '../assets/Sergio.jpg';
+import EzequielImage from '../assets/ezequiel.jpg';
+import EricImage from '../assets/eric.jpg';
+import SergioImage from '../assets/sergio.jpg';
 import "./AboutPage.css";
 
 export const AboutPage = () => {
