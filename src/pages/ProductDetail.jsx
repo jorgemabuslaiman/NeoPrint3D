@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { Container, Card, Button } from "react-bootstrap";
 
-const ProductDetail = ({ products }) => {
+function ProductDetail ({ products }) {
   const { id } = useParams();
   const product = products.find((p) => p.id === id);
 

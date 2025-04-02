@@ -2,7 +2,7 @@
 import React from 'react'
 import { Col, Row } from "react-bootstrap";
 import logoRolling from "../assets/logo2.png";
-import jorgeImage from "../assets/george.jpg"
+import jorgeImage from '../assets/george.jpg';
 import EzequielImage from '../assets/ezequiel.jpg';
 import EricImage from '../assets/eric.jpg';
 import SergioImage from '../assets/sergio.jpg';

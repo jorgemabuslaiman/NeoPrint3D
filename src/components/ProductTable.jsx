@@ -2,7 +2,7 @@ import React from 'react';
 import { Table, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const ProductTable = ({ products, setProducts, handleEditProduct }) => {
+function ProductTable ({ products, setProducts, handleEditProduct }) {
   const deleteProduct = (id) => {
     setProducts(products.filter(product => product.id !== id));
   };
