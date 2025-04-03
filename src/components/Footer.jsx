@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
-function Footer () {
+function Footer() {
   return (
     <footer className="bg-dark text-light text-center p-3 mt-4">
       <Container>
@@ -24,14 +25,10 @@ function Footer () {
           >
             <FaInstagram size={24} color="#E4405F" />
           </a>
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-2"
-          >
+          {/* Cambio: Usamos Link en lugar de <a> para la redirección interna */}
+          <Link to="/error-404" className="mx-2">
             <FaYoutube size={24} color="#FF0000" />
-          </a>
+          </Link>
         </div>
       </Container>
     </footer>
@@ -39,4 +36,3 @@ function Footer () {
 };
 
 export default Footer;
-
