@@ -9,6 +9,7 @@ import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import ProductDetail from "./pages/ProductDetail";
 import { AboutPage } from './pages/AboutPage';
+import Error404 from "./components/Error404"; 
 
 function App () {
   const [isLogged, setIsLogged] = useState(false);
@@ -33,6 +34,7 @@ function App () {
         <Route path="/login" element={<Login setIsLogged={setIsLogged} />} />
         <Route path="/product/:id" element={<ProductDetail products={products} />} />
         <Route path="/aboutus" element={<AboutPage/>} />
+        <Route path="/error-404" element={<Error404 />} />
       </Routes>
       <Footer />
     </Router>
